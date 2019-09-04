@@ -1,4 +1,4 @@
-# LeetCode
+# Cracking the Coding Interview
 # String Compression
 
 def stringCompression(string):
