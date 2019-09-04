@@ -16,6 +16,7 @@ Output: True ("taco cat", "atco cta", ...etc...)
 
 # 1.6 - String Compression
 (NOTE - Work in progress)
+
 Implement a method to perform basic string compression using the counts of repeated characters. 
 
 Example:
