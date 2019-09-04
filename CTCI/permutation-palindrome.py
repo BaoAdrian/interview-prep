@@ -1,4 +1,5 @@
-
+# Cracking the Coding Interview
+# 1.4 - Palindrome Permutation
 
 def per_pal(string):
     counts = {}
