@@ -46,7 +46,7 @@ class Stack:
 
     def size(self):
         """
-        size: Returns the current size of the stack
+        size: Returns the current size of the stack.
         """
         return len(self.stack)
 
@@ -68,7 +68,8 @@ class Stack:
     def search(self, target):
         """
         search: Searches the stack for a given element and 
-        returns its index IF FOUND. Returns None otherwise.
+        and flags the location on the console output. Displays
+        note if no element is found.
         """
         is_found = False
         print()
@@ -91,7 +92,8 @@ class Stack:
     def search_and_remove(self, target):
         """
         search_and_remove: Searches current stack for a target element
-        and removes it if found. Otherwise, stack remains in tact.
+        and removes it if found. Otherwise, returns None and stack 
+        remains in tact.
         """
         temp_stack = Stack()
         found_element = None
