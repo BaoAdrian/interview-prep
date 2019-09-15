@@ -18,19 +18,7 @@ def parse_args():
     args = parser.parse_args()
     return args
 
-def print_header(msg):
-    """
-    print_header: Utility function to print headers.
-    """
-    SPACING = 60
-    print("\n" + "-"*SPACING)
-    print(msg.center(SPACING, "-"))
-    print("-"*SPACING)
-
 def test_add():
-    """
-    test_add: Tests LinkedList.add().
-    """
     print_header(" Testing LinkedList.add(node) ")
     ll = SinglyLinkedList()
     print("LinkedList: {}".format(ll))
@@ -46,9 +34,6 @@ def test_add():
     print("LinkedList: {}".format(ll))
 
 def test_append():
-    """
-    test_append: Tests LinkedList.append().
-    """
     print_header(" Testing LinkedList.append(node) ")
     ll = SinglyLinkedList()
     print("LinkedList: {}".format(ll))
@@ -64,9 +49,6 @@ def test_append():
     print("LinkedList: {}".format(ll))
 
 def test_insert():
-    """
-    test_insert: Tests LinkedList.insert(node, index)
-    """
     print_header(" Testing LinkedList.insert(node, index) ")
     ll = SinglyLinkedList()
     nodes = [Node(1), Node(2), Node(3), Node(4)]
@@ -87,9 +69,6 @@ def test_insert():
     print("LinkedList: {}".format(ll))
 
 def test_remove_by_element():
-    """
-    test_remove_by_element: Tests LinkedList.remove_by_element().
-    """
     print_header(" Testing LinkedList.remove_by_element(valid) ")
     ll = SinglyLinkedList()
     nodes = [Node("one"), Node("two"), Node("three"), Node("four"), Node("five")]
@@ -113,9 +92,6 @@ def test_remove_by_element():
     print("LinkedList: {}".format(ll))
 
 def test_remove_by_index():
-    """
-    test_remove_by_index: Tests LinkedList.remove_by_index().
-    """
     print_header(" Testing LinkedList.remove_by_index(valid) ")
     ll = SinglyLinkedList()
     nodes = [Node("one"), Node("two"), Node("three"), Node("four"), Node("five")]
@@ -139,9 +115,6 @@ def test_remove_by_index():
     print("LinkedList: {}".format(ll))
 
 def test_search():
-    """
-    test_search: Tests LinkedList.search().
-    """
     print_header(" Testing LinkedList.search(valid_target) ")
 
     ll = SinglyLinkedList()
@@ -157,6 +130,15 @@ def test_search():
         print("Found element at index: {}".format(index))
     else:
         print("Could not find node with matching element.")
+
+def print_header(msg):
+    """
+    print_header: Utility function to print headers.
+    """
+    SPACING = 60
+    print("\n" + "-"*SPACING)
+    print(msg.center(SPACING, "-"))
+    print("-"*SPACING)
 
 def main():
     args = parse_args()
