@@ -10,6 +10,22 @@ Queue is represented by the end of the front of list.
 class Queue:
     def __init__(self):
         self.queue = list()
+
+    def __len__(self):
+        return len(self.queue)
+
+    def __str__(self):
+        string = ""
+        for element in self.queue:
+            string += "[{}] << ".format(element)
+        string += "\n"
+        return string
+    
+    def __contains__(self, element):
+        for el in self.queue:
+            if el == element:
+                return True
+        return False
     
     def set_queue(self, queue):
         self.queue = queue
@@ -39,6 +55,7 @@ class Queue:
         is empty.
         """
         if self.is_empty():
+            print("Queue is empty. Nothing to dequeue.")
             return None
         return self.queue.pop(0)
 
@@ -48,23 +65,6 @@ class Queue:
         returning boolean True/False depending on its evaluation
         """
         return len(self.queue) == 0
-
-    def size(self):
-        """
-        size: Returns the size of the queue.
-        """
-        return len(self.queue)
-
-    def print_queue(self, msg):
-        """
-        print_queue: Print formatted string representation of the 
-        queue and its elements
-        """
-        print(msg)
-        queue_string = ""
-        for element in self.queue:
-            queue_string += "[{}] << ".format(element)
-        print(queue_string + "\n")
 
     def remove(self, target):
         """
@@ -86,4 +86,3 @@ class Queue:
             print("Couldn't find '{}'".format(target))
         self.set_queue(temp_queue.get_queue())
         return found_element
-
