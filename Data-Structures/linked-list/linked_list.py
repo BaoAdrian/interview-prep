@@ -12,13 +12,21 @@ class SinglyLinkedList:
         str: overridden method to provided formatted string
         representation of the current LinkedList.
         """
-        string = "[HEAD] -> "
+        string = ""
         curr = self.head
         while curr:
             string += "[{}] >> ".format(curr.get_element())
             curr = curr.get_next()
         string += "[NULL]"
         return string
+    
+    def __len__(self):
+        length = 0
+        curr = self.head
+        while curr:
+            length += 1
+            curr = curr.get_next()
+        return length
 
     def __contains__(self, target_element):
         curr = self.head
@@ -27,14 +35,6 @@ class SinglyLinkedList:
                 return True
             curr = curr.get_next()
         return False
-
-    def size(self):
-        curr = self.head
-        size = 0
-        while curr:
-            size += 1
-            curr = curr.get_next()
-        return size
 
     def is_empty(self):
         return self.head == None
@@ -70,17 +70,19 @@ class SinglyLinkedList:
         specified index. If index is invalid, will add element
         to the end of the LinkedList.
         """
-        if index > self.size():
-            print("Invalid index, adding to end of the list")
+        if index > len(self):
+            print("Invalid index, {}. Appending to end of the list".format(index))
             self.append(node)
         else:
             running_idx = 1
             curr = self.head
             while curr:
                 if running_idx == index:
+                    print("Inserting {} into index {}".format(node, index))
                     node.set_next(curr.get_next())
                     curr.set_next(node)
                     break
+                running_idx += 1
                 curr = curr.get_next()
 
     def remove_by_element(self, target_element):
@@ -88,6 +90,7 @@ class SinglyLinkedList:
         remove_by_element: Removes & returns node with matching 
         target if found. Otherwise, LinkedList remains in tact.
         """
+        print("Target: {}".format(target_element))
         curr = self.head
 
         if curr.get_element() == target_element:
@@ -100,10 +103,13 @@ class SinglyLinkedList:
             if next.get_element() == target_element:
                 curr.set_next(next.get_next())
                 next.set_next(None)
+                print("Found target! Removing!")
                 return curr
             curr = next
             next = next.get_next()
         
+        # If here, no element was found, notify as needed
+        print("Unable to find: {}".format(target_element))
         return None
     
     def remove_by_index(self, index):
@@ -112,7 +118,8 @@ class SinglyLinkedList:
         corresponding index if valid. Otherwise, LinkedList 
         remains in tact.
         """
-        if index > self.size():
+        print("Target index: {}".format(index))
+        if index > len(self):
             print("Invalid index. Nothing was removed.")
             return None
         
@@ -127,6 +134,7 @@ class SinglyLinkedList:
             if running_idx == index:
                 curr.set_next(next.get_next())
                 next.set_next(None)
+                print("Found target at index {}! Removing!".format(index))
                 return next
             running_idx += 1
             curr = next
@@ -140,6 +148,7 @@ class SinglyLinkedList:
         searching for target_element and returns its index if 
         found. Returns -1 otherwise.
         """
+        print("Target: {}".format(target_element))
         index = 0
         curr = self.head
         while curr:
@@ -157,6 +166,9 @@ class Node:
     def __init__(self, element):
         self.element = element
         self.next = None
+
+    def __str__(self):
+        return "[{}]".format(self.element)
 
     def get_next(self):
         return self.next

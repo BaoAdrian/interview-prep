@@ -63,17 +63,80 @@ def test_append():
     ll.append(n3)
     print("LinkedList: {}".format(ll))
 
+def test_insert():
+    """
+    test_insert: Tests LinkedList.insert(node, index)
+    """
+    print_header(" Testing LinkedList.insert(node, index) ")
+    ll = SinglyLinkedList()
+    nodes = [Node(1), Node(2), Node(3), Node(4)]
+    [ll.add(node) for node in nodes]
+
+    print("LinkedList: {}".format(ll))
+
+    new_node = Node(500)
+    new_index = 2
+    ll.insert(new_node, new_index)
+
+    print("LinkedList: {}".format(ll))
+
+    new_node = Node(1000)
+    new_index = 15
+    ll.insert(new_node, new_index)
+
+    print("LinkedList: {}".format(ll))
+
 def test_remove_by_element():
     """
     test_remove_by_element: Tests LinkedList.remove_by_element().
     """
-    pass
+    print_header(" Testing LinkedList.remove_by_element(valid) ")
+    ll = SinglyLinkedList()
+    nodes = [Node("one"), Node("two"), Node("three"), Node("four"), Node("five")]
+    [ll.append(node) for node in nodes]
+
+    print("LinkedList: {}".format(ll))
+
+    target_element = "four"
+    ll.remove_by_element(target_element)
+    print("LinkedList: {}".format(ll))
+
+    print_header(" Testing LinkedList.remove_by_element(invalid) ")
+    ll = SinglyLinkedList()
+    nodes = [Node("one"), Node("two"), Node("three"), Node("four"), Node("five")]
+    [ll.append(node) for node in nodes]
+
+    print("LinkedList: {}".format(ll))
+
+    target_element = "nonexistent"
+    ll.remove_by_element(target_element)
+    print("LinkedList: {}".format(ll))
 
 def test_remove_by_index():
     """
     test_remove_by_index: Tests LinkedList.remove_by_index().
     """
-    pass
+    print_header(" Testing LinkedList.remove_by_index(valid) ")
+    ll = SinglyLinkedList()
+    nodes = [Node("one"), Node("two"), Node("three"), Node("four"), Node("five")]
+    [ll.append(node) for node in nodes]
+
+    print("LinkedList: {}".format(ll))
+
+    target_index = 2
+    ll.remove_by_index(target_index)
+    print("LinkedList: {}".format(ll))
+
+    print_header(" Testing LinkedList.remove_by_index(invalid) ")
+    ll = SinglyLinkedList()
+    nodes = [Node("one"), Node("two"), Node("three"), Node("four"), Node("five")]
+    [ll.append(node) for node in nodes]
+
+    print("LinkedList: {}".format(ll))
+
+    target_index = 10
+    ll.remove_by_index(target_index)
+    print("LinkedList: {}".format(ll))
 
 def test_search():
     """
@@ -88,7 +151,6 @@ def test_search():
     print("LinkedList: {}".format(ll))
 
     target_element = 2
-    print("Search value: {}".format(target_element))
 
     index = ll.search(target_element)
     if index != -1:
@@ -102,6 +164,7 @@ def main():
     if args.test_all or args.test_add:
         test_add()
         test_append()
+        test_insert()
     if args.test_all or args.test_removal:
         test_remove_by_element()
         test_remove_by_index()
