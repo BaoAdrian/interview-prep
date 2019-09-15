@@ -11,12 +11,30 @@ class Stack:
     def __init__(self):
         self.stack = []
 
+    def __str__(self):
+        string = ""
+        if self.is_empty():
+            print("No elements in the stack")
+            return
+        max_len = max([len(str(el)) for el in self.stack])
+        for element in self.stack[::-1]:
+            string += "\n| {} |".format(str(element).center(max_len))
+            string += "\n| {} |".format("-"*(max_len))
+        string += "\n"
+        return string
+
+    def __len__(self):
+        return len(self.stack)
+
+    def __contains__(self, element):
+        return element in self.stack
+
     def peek(self):
         """
         peek: Returns the element at the top of the stack
         or None if stack is empty
         """
-        if len(self.stack) >= 1:
+        if len(self) >= 1:
             return self.stack[-1]
         return None
 
@@ -26,7 +44,7 @@ class Stack:
         one exists and return the element. Otherwise, returns
         None if stack is empty. 
         """
-        if len(self.stack) >= 1:
+        if len(self) >= 1:
             element = self.stack.pop(-1)
             return element
         return None
@@ -42,28 +60,7 @@ class Stack:
         is_empty: Checks if the stack is currently empty, 
         returning boolean True/False depending on its evaluation
         """
-        return len(self.stack) == 0
-
-    def size(self):
-        """
-        size: Returns the current size of the stack.
-        """
-        return len(self.stack)
-
-    def print_stack(self, msg):
-        """
-        print_stack: Prints formatted output for the current
-        structure of the stack.
-        """
-        print("\n" + msg)
-        if self.is_empty():
-            print("No elements in the stack")
-            return
-        max_len = max([len(el) for el in self.stack])
-        for element in self.stack[::-1]:
-            print("| " + element.center(max_len) + " |")
-            print("| " + "-"*(max_len) + " |")
-        print()
+        return len(self) == 0
 
     def search(self, target):
         """
@@ -87,7 +84,7 @@ class Stack:
         print()
 
         if not is_found:
-            print("No element found: {}\n".format(target))
+            print("No element found: '{}'\n".format(target))
 
     def search_and_remove(self, target):
         """
@@ -110,8 +107,8 @@ class Stack:
             self.push(temp_stack.pop())
 
         if found_element:
-            print("Found element. Removing.")
-            self.print_stack("New Stack:")
+            print("Found element. Removing.\n")
+            print("New Stack: {}".format(self))
         else:
             print("No element found: '{}'\n".format(target))
         
