@@ -105,13 +105,5 @@ class Stack:
         # Reinsert stack elements with target removed
         while not temp_stack.is_empty():
             self.push(temp_stack.pop())
-
-        if found_element:
-            print("Found element. Removing.\n")
-            print("New Stack: {}".format(self))
-        else:
-            print("No element found: '{}'\n".format(target))
         
         return found_element
-
-

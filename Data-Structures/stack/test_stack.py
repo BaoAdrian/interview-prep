@@ -93,14 +93,26 @@ def test_search_and_remove():
 
     target = 9999999
     print("Target: '{}'".format(target))
-    stack.search_and_remove(target)
+    found_element = stack.search_and_remove(target)
+
+    if found_element:
+        print("Found element. Removing.\n")
+        print("New Stack: {}".format(stack))
+    else:
+        print("No element found: '{}'\n".format(target))
 
     print_header(" Testing Stack.search_and_remove(invalid) ")
     print("Stack: {}".format(stack))
 
     target = 123456
     print("Target: '{}'".format(target))
-    stack.search_and_remove(target)    
+    found_element = stack.search_and_remove(target) 
+
+    if found_element:
+        print("Found element. Removing.\n")
+        print("New Stack: {}".format(stack))
+    else:
+        print("No element found: '{}'\n".format(target))   
 
 def print_header(msg):
     """
