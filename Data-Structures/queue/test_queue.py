@@ -4,7 +4,7 @@ import argparse
 def parse_args():
     """
     parse_args: Parse command line arguments to test all
-    or selected functionality of the LinkedList class.
+    or selected functionality of the Queue class.
     """
     parser = argparse.ArgumentParser()
     parser.add_argument('--test-all', action='store_true',

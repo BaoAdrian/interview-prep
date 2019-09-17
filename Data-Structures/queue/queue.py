@@ -77,12 +77,9 @@ class Queue:
         while not self.is_empty():
             curr_element = self.dequeue()
             if not found_element and curr_element == target:
-                print("Found it! Removing.")
                 found_element = curr_element
             else:
                 temp_queue.enqueue(curr_element)
 
-        if not found_element:
-            print("Couldn't find '{}'".format(target))
         self.set_queue(temp_queue.get_queue())
         return found_element
