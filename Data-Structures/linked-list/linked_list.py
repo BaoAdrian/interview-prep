@@ -1,7 +1,7 @@
 class SinglyLinkedList:
     """
     SinglyLinkedList: DS Implementation making use of the 
-    Node class defined below to define a Single-LinkedList and
+    Node class defined below to define a Singly LinkedList and
     its corresponding methods.
     """
     def __init__(self):
@@ -78,7 +78,6 @@ class SinglyLinkedList:
             curr = self.head
             while curr:
                 if running_idx == index:
-                    print("Inserting {} into index {}".format(node, index))
                     node.set_next(curr.get_next())
                     curr.set_next(node)
                     break
@@ -103,13 +102,11 @@ class SinglyLinkedList:
             if next.get_element() == target_element:
                 curr.set_next(next.get_next())
                 next.set_next(None)
-                print("Found target! Removing!")
                 return curr
             curr = next
             next = next.get_next()
         
-        # If here, no element was found, notify as needed
-        print("Unable to find: {}".format(target_element))
+        # If here, no element was found
         return None
     
     def remove_by_index(self, index):
@@ -118,9 +115,7 @@ class SinglyLinkedList:
         corresponding index if valid. Otherwise, LinkedList 
         remains in tact.
         """
-        print("Target index: {}".format(index))
         if index > len(self):
-            print("Invalid index. Nothing was removed.")
             return None
         
         curr = self.head
@@ -134,7 +129,6 @@ class SinglyLinkedList:
             if running_idx == index:
                 curr.set_next(next.get_next())
                 next.set_next(None)
-                print("Found target at index {}! Removing!".format(index))
                 return next
             running_idx += 1
             curr = next

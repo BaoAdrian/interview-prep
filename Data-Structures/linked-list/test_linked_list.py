@@ -23,13 +23,13 @@ def test_add():
     ll = SinglyLinkedList()
     print("LinkedList: {}".format(ll))
     n1, n2, n3 = Node(100), Node(200), Node(300)
-    print("Adding n1")
+    print("Adding {}".format(n1))
     ll.add(n1)
     print("LinkedList: {}".format(ll))
-    print("Adding n2")
+    print("Adding {}".format(n2))
     ll.add(n2)
     print("LinkedList: {}".format(ll))
-    print("Adding n3")
+    print("Adding {}".format(n3))
     ll.add(n3)
     print("LinkedList: {}".format(ll))
 
@@ -38,13 +38,13 @@ def test_append():
     ll = SinglyLinkedList()
     print("LinkedList: {}".format(ll))
     n1, n2, n3 = Node(100), Node(200), Node(300)
-    print("Appending n1")
+    print("Appending {}".format(n1))
     ll.append(n1)
     print("LinkedList: {}".format(ll))
-    print("Appending n2")
+    print("Appending {}".format(n2))
     ll.append(n2)
     print("LinkedList: {}".format(ll))
-    print("Appending n3")
+    print("Appending {}".format(n3))
     ll.append(n3)
     print("LinkedList: {}".format(ll))
 
@@ -58,12 +58,14 @@ def test_insert():
 
     new_node = Node(500)
     new_index = 2
+    print("Inserting {} into index {}".format(new_node, new_index))
     ll.insert(new_node, new_index)
 
     print("LinkedList: {}".format(ll))
 
     new_node = Node(1000)
     new_index = 15
+    print("Inserting {} into index {}".format(new_node, new_index))
     ll.insert(new_node, new_index)
 
     print("LinkedList: {}".format(ll))
