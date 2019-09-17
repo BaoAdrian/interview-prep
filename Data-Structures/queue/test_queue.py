@@ -26,9 +26,10 @@ def test_enqueue():
     queue = Queue()
 
     queue.enqueue("1st in line")
+    print("Queue: {}".format(queue))
     queue.enqueue("2nd in line")
+    print("Queue: {}".format(queue))
     queue.enqueue("3rd in line")
-
     print("Queue: {}".format(queue))
 
 def test_dequeue():
@@ -36,7 +37,7 @@ def test_dequeue():
 
     queue = Queue()
     queue.enqueue("First process")
-    queue.enqueue("Final process")
+    queue.enqueue("Last process")
 
     print("Queue: {}".format(queue))
 
@@ -76,7 +77,7 @@ def test_remove():
 
     print("Queue: {}".format(queue))
     target = 3333
-    print("Target: '{}'".format(target))
+    print("Target: '{}'\n".format(target))
     queue.remove(target)
     print("Queue: {}".format(queue))
 
