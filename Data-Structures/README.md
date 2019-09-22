@@ -12,6 +12,8 @@ Data structures to be implemented
 # Getting Started
 Each subdirectory for each data structure contains its own manual testing script and unittest suite that can be used to verify the behavior or functionality of the implemented data structure.
 
+Alternatively, two handy scripts have been included to run ALL unittests (`exec_unittests.sh`) and run ALL manual/formatted output tests (`exec_ds_tests.sh`) and can be modified to include/remove flags depending on your desired usecase.
+
 ## Unittests
 These tests are noted by the `unittest_<datastructure>.py` notation and utilize Python's standard libray, `unittest`, to provide basic automated testing of a data structures implementation. 
 
@@ -64,6 +66,3 @@ optional arguments:
 ```
 
 If you wish to view all comprehensive tests being executed with their supported output, you can use the `--test-all` flag with any of the data structure scripts.
-
-## Bash Scripts
-Two handy scripts have been included to run ALL unittests (`exec_unittests.sh`) and run ALL manual/formatted output tests (`exec_ds_tests.sh`) and can be modified to include/remove flags depending on your desired usecase.
