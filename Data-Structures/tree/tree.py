@@ -111,7 +111,7 @@ class BSTNode:
         return traversal
 
     def inorder_traversal(self, traversal):
-        """ Preorder Traversal of BST: LVR """
+        """ Inorder Traversal of BST: LVR """
         if self == None:
             return None
         else:
@@ -121,7 +121,7 @@ class BSTNode:
         return traversal
 
     def postorder_traversal(self, traversal):
-        """ Preorder Traversal of BST: LRV """
+        """ Postorder Traversal of BST: LRV """
         if self == None:
             return None
         else:
