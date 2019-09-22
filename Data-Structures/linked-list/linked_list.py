@@ -89,7 +89,6 @@ class SinglyLinkedList:
         remove_by_element: Removes & returns node with matching 
         target if found. Otherwise, LinkedList remains in tact.
         """
-        print("Target: {}".format(target_element))
         curr = self.head
 
         if curr.get_element() == target_element:
@@ -142,7 +141,6 @@ class SinglyLinkedList:
         searching for target_element and returns its index if 
         found. Returns -1 otherwise.
         """
-        print("Target: {}".format(target_element))
         index = 0
         curr = self.head
         while curr:
