@@ -47,7 +47,7 @@ Examples:
 ```
 
 ## Manual Testing Script
-These are noted by the `test-<datastructure>.py` notation and support various command-line arguments to test specific aspects of the target data structure.
+These manual tests are noted by the `test_<datastructure>.py` notation and support various command-line arguments to test specific aspects of the target data structure.
 
 Example usage for the Binary Search Tree Data Structure:
 ```
