@@ -3,7 +3,7 @@ This directory contains the Python implementation of the Graph Data Structure. I
 
 In addition to the provided test scripts, `word-ladder-problem.py` has been included to showcase the Graph DS usage to solve the famous [Word Ladder Problem](https://en.wikipedia.org/wiki/Word_ladder).
 
-# Getting Started 
+# Usage
 
 ## Manual Tests
 These tests can be used to visualize various operations performed on the implemented Graph.
@@ -26,7 +26,7 @@ These can be run to ensure the functionality works as expected
 (WIP)
 
 ## Word Ladder Problem
-Included in this directory is a sample file of words in the required format. You may view the programs execution by running 
+Included in this directory is a sample file of words (`default_word_ladder.txt`) in the required format. You may view the programs execution by running 
 ```
 $ python3 word-ladder-problem.py --run-example
 ```
