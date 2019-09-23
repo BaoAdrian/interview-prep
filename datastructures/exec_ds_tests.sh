@@ -27,3 +27,10 @@ echo -e " Running Manual Tests for Binary Search Tree"
 echo -e "=============================================="
 echo -e "==============================================\n"
 python3 ./tree/test_tree.py --test-all
+
+echo -e "\n\n=============================================="
+echo -e "=============================================="
+echo -e " Running Manual Tests for Graph"
+echo -e "=============================================="
+echo -e "==============================================\n"
+python3 ./graph/test_graph.py --test-all

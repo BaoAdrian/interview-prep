@@ -19,3 +19,9 @@ echo -e "\n========================================="
 echo -e "Running Unit Test for Binary Search Tree"
 echo -e "=========================================\n"
 python3 ./tree/unittest_tree.py --verbose
+
+echo -e "\n========================================="
+echo -e "Running Unit Test for Graph"
+echo -e "=========================================\n"
+# WIP
+# python3 ./graph/unittest_graph.py --verbose
