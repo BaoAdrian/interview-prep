@@ -26,7 +26,7 @@ These can be run to ensure the functionality works as expected
 (WIP)
 
 ## Word Ladder Problem
-Included in this directory is a sample file of words (`default_word_ladder.txt`) in the required format. You may view the programs execution by running 
+Included in this directory is a sample file of words (`default_word_ladder.txt`) in the required format. You may view a sample of the programs execution by running:
 ```
 $ python3 word-ladder-problem.py --run-example
 ```
