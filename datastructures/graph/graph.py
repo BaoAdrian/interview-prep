@@ -8,37 +8,37 @@ from queue import Queue
 
 class Graph:
     def __init__(self):
-        self.vertices = {}
-        self.num_vertices = 0
+        self.nodes = {}
+        self.num_nodes = 0
         
     def __contains__(self, id):
-        return id in self.vertices
+        return id in self.nodes
 
     def __iter__(self):
-        return iter(self.vertices.values())
+        return iter(self.nodes.values())
 
     def __str__(self):
         string = "{\n"
-        for k, v in self.vertices.items():
+        for k, v in self.nodes.items():
             string += "{} : {}\n".format(k, v)
         string += "}\n"
         return string
 
     def size(self):
-        return self.num_vertices
+        return self.num_nodes
 
-    def add_vertex(self, vertex_key):
+    def add_node(self, node_id):
         """
         add_vertex: Given a vertex key, creates Vertex object 
         and adds to adjency list.
         """
-        self.num_vertices += 1
-        new_vertex = Vertex(vertex_key)
-        self.vertices[vertex_key] = new_vertex
+        self.num_nodes += 1
+        new_vertex = Node(node_id)
+        self.nodes[node_id] = new_vertex
         return new_vertex
     
-    def get_vertex(self, vertex_key):
-        return self.vertices[vertex_key] if vertex_key in self.vertices else None
+    def get_node(self, node_id):
+        return self.nodes[node_id] if node_id in self.nodes else None
 
     def add_all_edges(self, src, dest_vertices):
         for dest in dest_vertices:
@@ -50,14 +50,14 @@ class Graph:
         vertices exist with given src/dest keys, this function
         will create new vertices and connect them as neighbors.
         """
-        if src not in self.vertices:
-            self.add_vertex(src)
-        if dest not in self.vertices:
-            self.add_vertex(dest)
-        self.vertices[src].add_neighbor(self.vertices[dest])
+        if src not in self.nodes:
+            self.add_node(src)
+        if dest not in self.nodes:
+            self.add_node(dest)
+        self.nodes[src].add_neighbor(self.nodes[dest])
 
-    def get_vertices(self):
-        return self.vertices.values()
+    def get_nodes(self):
+        return self.nodes.values()
 
     def backtrace(self, parent, src, dst):
         """
@@ -86,17 +86,17 @@ class Graph:
             # Search not required when target is self
             return [src]
         parent = {} # Keep track of parents in path if found
-        start = self.get_vertex(src)
+        start = self.get_node(src)
         queue = Queue()
         queue.put(start)
         while not queue.empty():
             curr = queue.get()
             if curr.get_id() == dst:
                 return self.backtrace(parent, src, dst)
-            for neighbor in curr.get_connections():
-                if neighbor.get_visited() == False:
+            for neighbor in curr.get_neighbors():
+                if neighbor.is_visited() == False:
                     parent[neighbor.get_id()] = curr.get_id()
-                    neighbor.set_visited(True)
+                    neighbor.visit()
                     queue.put(neighbor)
         return []
 
@@ -110,12 +110,12 @@ class Graph:
         stack = [(src, [src])]
         while stack:
             (key, path) = stack.pop()
-            vertex = self.get_vertex(key)
-            if vertex.get_visited() == False:
-                vertex.set_visited(True)
+            node = self.get_node(key)
+            if node.is_visited() == False:
+                node.visit()
                 if key == dst:
                     return path
-                for neighbor in self.vertices[key].get_connections():
+                for neighbor in self.nodes[key].get_neighbors():
                     stack.append((neighbor.get_id(), path + [neighbor.get_id()]))
         return []
 
@@ -138,32 +138,32 @@ class Graph:
         recur_dfs_helper: Helper function used to maintain path from
         src to dst (if one exists).
         """
-        for neighbor in self.vertices[src].get_connections():
-            if not neighbor.get_visited():
-                neighbor.set_visited(True)
+        for neighbor in self.nodes[src].get_neighbors():
+            if not neighbor.is_visited():
+                neighbor.visit()
                 parents[neighbor.get_id()] = src
                 self.recur_dfs_helper(neighbor.get_id(), dst, parents)
         return parents
 
     def refresh(self):
         """ Refreshes all visited nodes to vanilla """
-        for vertex in self.get_vertices():
-            vertex.set_visited(False)
+        for node in self.get_nodes():
+            node.unvisit()
 
-class Vertex:
+class Node:
     def __init__(self, id):
         self.id = id
-        self.connected_to = []
+        self.neighbors = []
         self.visited = False # Protect against cycles in search algorithms
 
     def __str__(self):
-        return "{} > {}".format(str(self.id), str([vert.id for vert in self.connected_to]))
+        return "{} > {}".format(str(self.id), str([vert.id for vert in self.neighbors]))
 
     def add_neighbor(self, neighbor):
-        self.connected_to.append(neighbor)
+        self.neighbors.append(neighbor)
     
-    def get_connections(self):
-        return self.connected_to
+    def get_neighbors(self):
+        return self.neighbors
 
     def get_id(self):
         return self.id
@@ -171,8 +171,11 @@ class Vertex:
     def set_id(self, id):
         self.id = id
 
-    def get_visited(self):
-        return self.visited
+    def visit(self):
+        self.visited = True
 
-    def set_visited(self, boolean):
-        self.visited = boolean
+    def unvisit(self):
+        self.visited = False
+    
+    def is_visited(self):
+        return self.visited

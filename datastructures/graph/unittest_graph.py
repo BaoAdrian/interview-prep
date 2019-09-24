@@ -1,4 +1,4 @@
-from graph import Graph, Vertex
+from graph import Graph, Node
 import unittest
 
 def build_graph():
@@ -18,11 +18,11 @@ def build_graph():
 class TestGraph(unittest.TestCase):
     def test_add_vertices(self):
         graph = Graph()
-        graph.add_vertex(100)
+        graph.add_node(100)
         self.assertTrue(100 in graph)
         self.assertEqual(graph.size(), 1)
-        graph.add_vertex(200)
-        graph.add_vertex(300)
+        graph.add_node(200)
+        graph.add_node(300)
         self.assertTrue(200 in graph and 300 in graph)
         self.assertEqual(graph.size(), 3)
 
@@ -31,14 +31,14 @@ class TestGraph(unittest.TestCase):
         graph.add_edge(100, 200)
         self.assertTrue(100 in graph and 200 in graph)
         self.assertEqual(graph.size(), 2)
-        connections = [node.get_id() for node in graph.get_vertex(100).get_connections()]
+        connections = [node.get_id() for node in graph.get_node(100).get_neighbors()]
         self.assertEqual(connections, [200])
         graph.add_edge(100, 300)
         graph.add_edge(100, 400)
         graph.add_edge(300, 400)
         self.assertTrue(300 in graph and 400 in graph)
         self.assertEqual(graph.size(), 4)
-        connections = [node.get_id() for node in graph.get_vertex(100).get_connections()]
+        connections = [node.get_id() for node in graph.get_node(100).get_neighbors()]
         self.assertEqual(connections, [200, 300, 400])
 
     def test_add_all_edges(self):
@@ -50,7 +50,7 @@ class TestGraph(unittest.TestCase):
         self.assertTrue(100 in graph and 200 in graph and 300 in graph  \
             and 400 in graph and 500 in graph and 600 in graph)
         self.assertEqual(graph.size(), 6)
-        connections = [node.get_id() for node in graph.get_vertex(200).get_connections()]
+        connections = [node.get_id() for node in graph.get_node(200).get_neighbors()]
         self.assertEqual(connections, [100, 300, 400])
 
     def test_bfs(self):

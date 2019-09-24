@@ -6,9 +6,9 @@ def test_add():
     graph = Graph()
     print("Initial Graph: {}".format(graph))
     print("Adding a few nodes using graph.add_vertex(key)")
-    graph.add_vertex(100)
-    graph.add_vertex(200)
-    graph.add_vertex(300)
+    graph.add_node(100)
+    graph.add_node(200)
+    graph.add_node(300)
     print("Graph: {}".format(graph))
 
     print("Now lets connect some nodes with Graph.add_edges(src, dst)")
