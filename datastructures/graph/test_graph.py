@@ -27,32 +27,49 @@ def test_add():
 def test_bfs():
     print_header(" Testing Graph.bfs(src, dst) ")
     graph = build_graph()
+    print("Graph:{}".format(graph))
 
-    # First try path that DOES exist
-    src, dst = 8, 6
+    src, dst = 8, 6 # Path exists
+    print("Path from {} to {} > {}".format(src, dst, graph.bfs(src,dst)))
+    graph.refresh()
+    src, dst = 10, 1 # Non-existent path
+    print("Path from {} to {} > {}".format(src, dst, graph.bfs(src,dst)))
+    graph.refresh()
+    src, dst = 4,4 # Self
     print("Path from {} to {} > {}".format(src, dst, graph.bfs(src,dst)))
 
-    # Next, try path that DOES NOT exist
-    src, dst = 10, 1
-    print("Path from {} to {} > {}".format(src, dst, graph.bfs(src,dst)))
 
 def test_dfs():
     print_header(" Testing Graph.dfs(src, dst) ")
     graph = build_graph()
-
-    # First try path that DOES exist
-    src, dst = 8, 6
+    print("Graph:{}".format(graph))
+    src, dst = 8, 6 # Path exists
+    print("Path from {} to {} > {}".format(src, dst, graph.dfs(src,dst)))
+    graph.refresh()
+    src, dst = 10, 1 # Non-existent path
+    print("Path from {} to {} > {}".format(src, dst, graph.dfs(src,dst)))
+    graph.refresh()
+    src, dst = 4,4 # Self
     print("Path from {} to {} > {}".format(src, dst, graph.dfs(src,dst)))
 
-    # Next, try path that DOES NOT exist
-    src, dst = 10, 1
-    print("Path from {} to {} > {}".format(src, dst, graph.dfs(src,dst)))
+def test_dfs_recursive():
+    print_header(" Testing Graph.recursive_dfs(src, dst) ")
+    graph = build_graph()
+    print("Graph:{}".format(graph))
+    src, dst = 8, 6 # Path exists
+    print("Path from {} to {} > {}".format(src, dst, graph.recursive_dfs(src,dst)))
+    graph.refresh()
+    src, dst = 10, 1 # Non-existent path
+    print("Path from {} to {} > {}".format(src, dst, graph.recursive_dfs(src,dst)))
+    graph.refresh()
+    src, dst = 4,4 # Self
+    print("Path from {} to {} > {}".format(src, dst, graph.recursive_dfs(src,dst)))
 
 def build_graph():
     graph = Graph()
     graph.add_all_edges(1, [3,6,7])
     graph.add_all_edges(2, [1,2])
-    graph.add_all_edges(3, [2,4])
+    graph.add_all_edges(3, [2, 4])
     graph.add_all_edges(4, [5])
     graph.add_all_edges(5, [3,9])
     graph.add_all_edges(6, [6,7])
@@ -93,6 +110,7 @@ def main():
         test_bfs()
     if args.test_all or args.test_dfs:
         test_dfs()
+        test_dfs_recursive()
 
 if __name__ == "__main__":
     main()

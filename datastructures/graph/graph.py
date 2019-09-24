@@ -1,3 +1,9 @@
+"""
+Graph: This class implements the Graph data structure
+and its assoicated methods. The Graph is represented by 
+a map of { ID : Vertex Object } pairs.
+"""
+
 from queue import Queue
 
 class Graph:
@@ -17,6 +23,9 @@ class Graph:
             string += "{} : {}\n".format(k, v)
         string += "}\n"
         return string
+
+    def size(self):
+        return self.num_vertices
 
     def add_vertex(self, vertex_key):
         """
@@ -48,9 +57,17 @@ class Graph:
         self.vertices[src].add_neighbor(self.vertices[dest])
 
     def get_vertices(self):
-        return self.vertices.keys()
+        return self.vertices.values()
 
     def backtrace(self, parent, src, dst):
+        """
+        backtrace: Trace back steps to generate a list of ordered
+        steps from src to dst nodes within the graph. If dst node
+        does not exist within the parent map, no path was found and
+        return empty list. Otherwise, return backtracted list.
+        """
+        if dst not in parent:
+            return []
         path = [dst]
         while path[-1] != src:
             path.append(parent[path[-1]])
@@ -65,6 +82,9 @@ class Graph:
         empty list.
         Runtime: O(V+E)
         """
+        if src == dst:
+            # Search not required when target is self
+            return [src]
         parent = {} # Keep track of parents in path if found
         start = self.get_vertex(src)
         queue = Queue()
@@ -98,6 +118,37 @@ class Graph:
                 for neighbor in self.vertices[key].get_connections():
                     stack.append((neighbor.get_id(), path + [neighbor.get_id()]))
         return []
+
+    def recursive_dfs(self, src, dst):
+        """
+        recursive_dfs: Recursive implementation of a Depth First Search
+        given start and end points. Uses helper funciton to  keep track 
+        of the current path by maintaing a map of parents through the 
+        recursive stack. 
+        If path is found, map is returned. Otherwise, returns None
+
+        NOTE: In some cases, returned path from recursive vs iterative 
+        dfs may differ due to order of processing for vertices.
+        """
+        parents = self.recur_dfs_helper(src, dst, {})
+        return self.backtrace(parents, src, dst)
+
+    def recur_dfs_helper(self, src, dst, parents):
+        """
+        recur_dfs_helper: Helper function used to maintain path from
+        src to dst (if one exists).
+        """
+        for neighbor in self.vertices[src].get_connections():
+            if not neighbor.get_visited():
+                neighbor.set_visited(True)
+                parents[neighbor.get_id()] = src
+                self.recur_dfs_helper(neighbor.get_id(), dst, parents)
+        return parents
+
+    def refresh(self):
+        """ Refreshes all visited nodes to vanilla """
+        for vertex in self.get_vertices():
+            vertex.set_visited(False)
 
 class Vertex:
     def __init__(self, id):
