@@ -3,6 +3,23 @@
 - [Valid Parentheses](#valid-parentheses)
 - [Max Subarrays](#max-subarrays)
 
+```
+.
+├── README.md
+├── array-problems
+│   ├── max_subarrays.py
+│   └── single_number.py
+├── stack-problems
+│   └── valid_paren.py
+└── tree-problems
+    ├── balanced_tree.py
+    ├── max_depth.py
+    ├── path_sum.py
+    ├── range_sum_bst.py
+    ├── same_tree.py
+    ├── symmetric_tree.py
+    └── unival_tree.py
+```
 
 # Univalued Binary Tree
 Problem: https://leetcode.com/problems/univalued-binary-tree/ 
