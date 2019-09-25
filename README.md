@@ -37,7 +37,7 @@ This is the current structure of the repository and will be updated accordingly 
 - [ ] Undirected Graph
 - [ ] Hash Table
 - [ ] Heap
-- [ ] Tree Variations (AVL, B, Multiway))
+- [ ] Tree Variations (AVL, B, Multiway)
 
 # Algorithms
 Some of these algorithms will be ported from their data structure implementation to isolate the algorithm itself for analysis.
@@ -52,11 +52,12 @@ Here is an [extensive list](https://en.wikipedia.org/wiki/List_of_algorithms) of
 - [ ] A*
 
 ## Sorting
-- [ ] Bubble Sort
-- [ ] Insertion Sort
-- [ ] Selection Sort
-- [ ] Quicksort
-- [ ] Merge Sort
+- [x] Bubble Sort
+- [x] Insertion Sort
+- [x] Selection Sort
+- [x] Shell Sort
+- [x] Quicksort
+- [x] Merge Sort
 - [ ] Heap Sort
 
 
