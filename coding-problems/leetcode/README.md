@@ -26,16 +26,16 @@ All problems within this directory are sorted by data structure and are shown in
 
 # Array Problems
 - [Max Subarrays](./array-problems/max_subarrays.py)
-- Single Number
+- [Single Number](./array-problems/single_number.py)
 
 # Stack Problems
-- Valid Parentheses
+- [Valid Parentheses](./stack-problems/valid_paren.py)
 
 # Tree Problems
-- Balanced Tree
-- Max Depth
-- Path Sum
-- Range Sum BST
-- Same Tree
-- Symmetric Tree
-- Univalue Tree
+- [Balanced Tree](./tree-problems/balanced_tree.py)
+- [Max Depth](./tree-problems/max_depth.py)
+- [Path Sum](./tree-problems/path_sum.py)
+- [Range Sum BST](./tree-problems/range_sum_bst.py)
+- [Same Tree](./tree-problems/same_tree.py)
+- [Symmetric Tree](./tree-problems/symmetric_tree.py)
+- [Univalue Tree](./tree-problems/unival_tree.py)
