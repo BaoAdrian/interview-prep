@@ -11,7 +11,8 @@ All problems within this directory are sorted by data structure and are shown in
 ├── README.md
 ├── array-problems
 │   ├── max_subarrays.py
-│   └── single_number.py
+│   ├── single_number.py
+│   └── sort_by_parity.py
 ├── stack-problems
 │   └── valid_paren.py
 └── tree-problems
@@ -27,6 +28,7 @@ All problems within this directory are sorted by data structure and are shown in
 # Array Problems
 - [Max Subarrays](./array-problems/max_subarrays.py)
 - [Single Number](./array-problems/single_number.py)
+- [Sort by Parity](./array-problems/sort_by_parity.py)
 
 # Stack Problems
 - [Valid Parentheses](./stack-problems/valid_paren.py)
