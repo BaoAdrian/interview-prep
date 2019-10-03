@@ -45,9 +45,9 @@ Some of these algorithms will be ported from their data structure implementation
 Here is an [extensive list](https://en.wikipedia.org/wiki/List_of_algorithms) of many different algorithms utilized for various purposes.
 ## Search
 - [ ] Binary Search
-- [ ] Iterative BFS (to be ported)
-- [ ] Iterative DFS (to be ported)
-- [ ] Recursive DFS (to be ported)
+- [x] Iterative BFS (to be ported)
+- [x] Iterative DFS (to be ported)
+- [x] Recursive DFS (to be ported)
 - [ ] Dijkstra
 - [ ] A*
 
