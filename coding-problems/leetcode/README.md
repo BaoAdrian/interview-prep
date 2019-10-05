@@ -9,13 +9,21 @@ All problems within this directory are sorted by data structure and are shown in
 ```
 .
 ├── README.md
-├── array-problems
+├── arrays
 │   ├── max_subarrays.py
 │   ├── single_number.py
 │   └── sort_by_parity.py
-├── stack-problems
+├── stacks
 │   └── valid_paren.py
-└── tree-problems
+├── strings
+│   ├── add_binary.py
+│   ├── alphanumeric_palindrome.py
+│   ├── jewels_in_stones.py
+│   ├── reverse_string.py
+│   ├── reverse_vowels.py
+│   ├── robot_to_origin.py
+│   └── unique_morse_codes.py
+└── trees
     ├── balanced_tree.py
     ├── max_depth.py
     ├── path_sum.py
