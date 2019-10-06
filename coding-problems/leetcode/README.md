@@ -8,12 +8,14 @@ All problems within this directory are sorted by data structure and are shown in
 # Project Tree
 ```
 .
-├── README.md
 ├── arrays
 │   ├── max_subarrays.py
 │   ├── single_number.py
 │   └── sort_by_parity.py
+├── recursion
+│   └── nth_tribonacci.py
 ├── stacks
+│   ├── min_add_valid_paren.py
 │   └── valid_paren.py
 ├── strings
 │   ├── add_binary.py
@@ -26,6 +28,7 @@ All problems within this directory are sorted by data structure and are shown in
 └── trees
     ├── balanced_tree.py
     ├── max_depth.py
+    ├── nary_traversals.py
     ├── path_sum.py
     ├── range_sum_bst.py
     ├── same_tree.py
@@ -34,18 +37,32 @@ All problems within this directory are sorted by data structure and are shown in
 ```
 
 # Array Problems
-- [Max Subarrays](./array-problems/max_subarrays.py)
-- [Single Number](./array-problems/single_number.py)
-- [Sort by Parity](./array-problems/sort_by_parity.py)
+- [Max Subarrays](./arrays/max_subarrays.py)
+- [Single Number](./arrays/single_number.py)
+- [Sort by Parity](./arrays/sort_by_parity.py)
+
+# Recursion Problems
+- [N-th Tribonacci Number](#./recursion/nth_tribonacci.py)
 
 # Stack Problems
-- [Valid Parentheses](./stack-problems/valid_paren.py)
+- [Minimum Add Valid Parentheses](./stacks/min_add_valid_paren.py)
+- [Valid Parentheses](./stacks/valid_paren.py)
+
+# String Problems
+- [Add Binary](./strings/add_binary.py)
+- [Alphanumeric Palindromes](./strings/alphanumeric_palindrome.py)
+- [Jewels and Stones](./strings/jewels_in_stones.py)
+- [Reverse String](./strings/reverse_string.py)
+- [Reverse Vowels](./strings/reverse_vowels.py)
+- [Robot to origin](./strings/robot_to_origin.py)
+- [Unique Morse Code](./strings/unique_morse_code.py)
 
 # Tree Problems
-- [Balanced Tree](./tree-problems/balanced_tree.py)
-- [Max Depth](./tree-problems/max_depth.py)
-- [Path Sum](./tree-problems/path_sum.py)
-- [Range Sum BST](./tree-problems/range_sum_bst.py)
-- [Same Tree](./tree-problems/same_tree.py)
-- [Symmetric Tree](./tree-problems/symmetric_tree.py)
-- [Univalue Tree](./tree-problems/unival_tree.py)
+- [Balanced Tree](./trees/balanced_tree.py)
+- [Max Depth](./trees/max_depth.py)
+- [N-ary Traversals (pre/post)](./trees/nary-traversals.py)
+- [Path Sum](./trees/path_sum.py)
+- [Range Sum BST](./trees/range_sum_bst.py)
+- [Same Tree](./trees/same_tree.py)
+- [Symmetric Tree](./trees/symmetric_tree.py)
+- [Univalue Tree](./trees/unival_tree.py)
