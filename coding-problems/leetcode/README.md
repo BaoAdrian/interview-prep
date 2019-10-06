@@ -1,8 +1,10 @@
 # LeetCode
 All problems within this directory are sorted by data structure and are shown in the project tree below
-- [Array Problems](#array-problems)
-- [Stack Problems](#stack-problems)
-- [Tree Problems](#tree-problems)
+- [Arrays](#array-problems)
+- [Recursion](#recursion-problems)
+- [Stacks](#stack-problems)
+- [Strings](#string-problems)
+- [Trees](#tree-problems)
 
 
 # Project Tree
@@ -60,7 +62,7 @@ All problems within this directory are sorted by data structure and are shown in
 # Tree Problems
 - [Balanced Tree](./trees/balanced_tree.py)
 - [Max Depth](./trees/max_depth.py)
-- [N-ary Traversals (pre/post)](./trees/nary-traversals.py)
+- [N-ary Traversals (pre/post)](./trees/nary_traversals.py)
 - [Path Sum](./trees/path_sum.py)
 - [Range Sum BST](./trees/range_sum_bst.py)
 - [Same Tree](./trees/same_tree.py)
