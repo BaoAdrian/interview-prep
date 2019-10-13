@@ -83,6 +83,7 @@ optional arguments:
 
 - **Root Tree**: Is a tree with a designated root node where every edge either points away or towards the root node. When edges point away fro the root, the graph is called an arborescence (*out-tree*) and anti-arborescence (*in-tree*) otherwise.
 
+   *Rooted Tree*
    ![Rooted Trees](../assets/rooted-tree.png)
 
 - **Directed Acyclic Graphs (DAGs)**: Directed graphs with no cycles. These graphs play an important role in representing structures with dependencies. (Example: Schedulers, Course Prerequisites, etc...)
@@ -91,8 +92,10 @@ optional arguments:
       - Finding shortest Path
       - Topological ordering of nodes
 
+   *Directed Acyclic Graph*
    ![DAG](../assets/dags.png)
 
 - **Bipartite Graph**: One whose vertices can be split into two independent groups `U` and `V` such that every edge connects between `U` and `V`. 
 
+   *Bipartite Graph*
    ![Bipartite Graph](../assets/bipartite-graph.png)
