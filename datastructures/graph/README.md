@@ -107,3 +107,16 @@ optional arguments:
 
    *> Complete Graph(s)*
    ![Competed Graphs](../assets/complete-graphs.png)
+
+# Representing Graphs
+- **Adjacency Matrix**: Graph is stored in a matrix where the cell that represents `m[i][j]` represents the edge weight of going from node `i` to node `j`.
+   > Note: It is often assumed that the edge of going from a node to itself has a cost of zero.
+
+  | Pros          | Cons          |
+  | :------------- |:------------- |
+  | Space efficient for graphs representing dense graphs | Requires `O(V^2)` space |
+  | Edge weight lookup is `O(1)` | Iterating over all edges takes `O(V^2)` time      |
+  | Simplest graph representation | |
+
+  *> Adjacency Matric*
+  ![Adjacency Matrix](../assets/adjacency-matrix.png)
