@@ -143,3 +143,89 @@ optional arguments:
   | Space efficient for representing **sparse** graphs | Less space efficient for **denser** graphs |
   | Iterating over all the edges is efficient | Edge weight lookup is `O(E)` |
   | Very simple structure | |
+
+# Common Graph Theory Problems
+Common starter question when analyzing a problem:
+- Is the graph undirected or directed?
+- Are the edges weighted?
+- Is the graph I will encounter likely to be sparse or dense with edges?
+- Should I use an adjacency matrix, adjacency list, edge list, or other structure to represent the graph efficiently.
+
+## Shortest Path Problem
+Given a weighted graph, find the shortest path of edges from node `A` to node `B`
+- Related algorithsm: BFS (unweighted graph), Dijkstra's, Bellman-Ford, Floyd-Warshall, A*
+
+  *> Given*
+  ![Start](../assets/shortest-path-start.png)
+
+  *> Shortest Path*
+  ![End](../assets/shortest-path-end.png)
+
+
+## Connectivity
+Does there exist a path between node `A` and node `B`?
+- We don't care about the cost, just wish to find whether one node is connected to another node.
+- Related algorithms: Union-Find data structure or any search algorithm (e.g. DFS).
+
+## Negative Cycles
+Does my weighted digraph have any negative cycle? If so, where?
+- Related algorithms: Bellman-Ford & Floyd-Marshall
+
+  *> Negative Cycle(s)*
+  ![Negative Cycles](../assets/negative-cycles.png)
+
+
+## Strongly Connected Components (SCCs)
+These can be thought of as **self-contained cycles** within a **directed graph** where every vertex in a given cycle can reach every other vertex in the same cycle.
+- This is typically an *intermediate* step as part of a larger algorithm
+- Related algorithms: Tarjan's and Kosaraju's algorithm
+
+  *> Strongly Connected Commponents*
+  ![SCCs](../assets/sccs-start.png)
+  ![SCCs](../assets/sccs-end.png)
+
+
+## Traveling Salesman Problem
+"Given a list of cities and the distances between each pair of cities, what is the shortest possible route that visits each city exactly once and returns to the origin city?"
+- This problem is considered **NP-Hard** meaning it's a very computationally challenging problem.
+- Related algorithsm: Held-Karp, branch and bound and many approximation algorithms
+
+  *> Traveling Salesman Problem*
+  ![tsp](../assets/tsp.png)
+
+
+## Bridges
+A *bridge / cut edge* is any **edge** in a graph whose removal increases the number of connected components.
+> Note: These often hint at weak points, bottlenecks or vulnerabilites in a graph
+
+  *> Bridges*
+  ![bridges](../assets/bridges.png)
+
+
+## Articulation Points
+An *articulation point / cut vertex* is any **node** in a graph whose removal increase the number of connected components
+> Note: These often hint at weak points, bottlenecks or vulnerabilites in a graph
+
+  *> Articulation Points*
+  ![AP](../assets/articulation-points.png)
+
+
+## Minumum Spanning Tree (MST)
+MST is a subset of the edges of a connected, edge-weighted graph that connects all the vertices together, without any cycles and with the minimum possible total edge weight. 
+- Common usecases: Designing least-cost network, circuit design, transportation network
+- Related algorithms: Kruskal's, Prim's & Boruvka's algorithsm
+
+  *> Given*
+  ![MST](../assets/mst-start.png)
+
+  *> Minimum Spanning Tree*
+  ![MST](../assets/mst-end.png)
+
+
+## Network Flow
+With an infinite input source, how much "flow" can we push through the network?
+- Example: Suppose the edges are roads with cars, pipes with water or hallways packed with people. Flow represents the volume of water to flow through the pipes, the number of cars the roads can sustain in traffic, and the maximum amount of people that can navigate through the hallways.
+- Related Algorithsm: For-Fulkerson, Edmonds-Karp & Dinic's algorithm
+
+  *> Network Flow*
+  ![Network Flow](../assets/network-flow.png)
