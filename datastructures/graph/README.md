@@ -114,9 +114,32 @@ optional arguments:
 
   | Pros          | Cons          |
   | :------------- |:------------- |
-  | Space efficient for graphs representing dense graphs | Requires `O(V^2)` space |
+  | Space efficient for representing **dense** graphs | Requires `O(V^2)` space |
   | Edge weight lookup is `O(1)` | Iterating over all edges takes `O(V^2)` time      |
   | Simplest graph representation | |
 
-  *> Adjacency Matric*
+  *> Adjacency Matrix*
   ![Adjacency Matrix](../assets/adjacency-matrix.png)
+
+- **Adjacency List**: Maps nodes to list of edges
+
+  | Pros          | Cons          |
+  | :------------- |:------------- |
+  | Space efficient for representing **sparse** graphs | Less space efficient for **denser** graphs |
+  | Iterating over all the edges is efficient | Edge weight lookup is `O(E)` |
+  | | Slightly more complex graph representation |
+
+  *> Adjacency List*
+  ![Adjacency List](../assets/adjacency-list.png)
+
+- **Edge List**: Unordered list of edges. Assume the notation for any triplet `(u,v,w)` means: "The cost from node `u` to node `v` is `w`".
+   - This is seldomly used because of its lack of structure. However its simplicity may garner practical usecases in a handful of algorithms.
+
+   *> Edge List*
+   ![Edge List](../assets/edge-list.png)
+
+  | Pros          | Cons          |
+  | :------------- |:------------- |
+  | Space efficient for representing **sparse** graphs | Less space efficient for **denser** graphs |
+  | Iterating over all the edges is efficient | Edge weight lookup is `O(E)` |
+  | Very simple structure | |
