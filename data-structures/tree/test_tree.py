@@ -19,6 +19,8 @@ def parse_args():
                         help='Test the functionality of the various BST traversals')
     parser.add_argument('--test-height', action='store_true',
                         help='Test the functionality of BSTNode.get_height()')
+    parser.add_argument('--test-pretty-print', action='store_true',
+                        help='Test the functionality of Pretty Print')
     args = parser.parse_args()
     return args
 
@@ -121,6 +123,17 @@ def test_height():
     print("Binary Search Tree: \n{}".format(root))
     print("Height: {}".format(root.get_height()))
     
+def test_pretty_print():
+    print_header(" Testing the Pretty Print Module ")
+    root = BSTNode(10)
+    root.insert(BSTNode(5))
+    root.insert(BSTNode(15))
+    root.insert(BSTNode(17))
+    root.insert(BSTNode(2))
+    root.insert(BSTNode(4))
+    root.insert(BSTNode(25))
+    print(root)
+    root.pretty_print_tree()
 
 def print_header(msg):
     """
@@ -144,6 +157,8 @@ def main():
         test_traversals()
     if args.test_all or args.test_height:
         test_height()
+    if args.test_all or args.test_pretty_print:
+        test_pretty_print()
 
 if __name__ == "__main__":
     main()

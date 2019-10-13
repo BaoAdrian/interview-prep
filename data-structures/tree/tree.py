@@ -4,6 +4,7 @@ tree.py
 Purpose: This class implements the recursive definition of a Binary
 Search Tree where each BSTNode is a subtree of the root BSTNode.
 """
+from pretty_print import *
 class BSTNode:
     def __init__(self, value):
         self.value = value
@@ -155,3 +156,9 @@ class BSTNode:
 
     def set_right(self, node):
         self.right = node
+
+    def pretty_print_tree(self):
+        pretty_print(self)
+    
+    def is_leaf(self):
+        return self.left == None and self.right == None
