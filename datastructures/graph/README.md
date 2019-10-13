@@ -68,3 +68,31 @@ optional arguments:
   -s SRC, --src SRC     Source KEY (word) to begin the ladder
   -d DST, --dst DST     Destionan KEY (word) to complete the ladder
 ```
+
+# Notes
+
+# Types of Graphs
+- **Undirected Graph**: A graph in which edges have no orientation. The edge (u,v) is identical to edge (v,u)
+
+- **Directed Graph**: (Digraph) graph in whcih the edges have orientation. For example, the edge  (u,v) is the edge FROM `u` TO node `v`.
+
+- **Weighted Graph**: Many graphs can have edges that contain a certain weight to represent an arbitrary value such as cost, distance, quantity, etc...
+   - Can come in directed/undirected types
+
+- **Trees**: Undirected graph with NO cycles. Equivalently, it is a connected graph with N nodes and N-1 edges.
+
+- **Root Tree**: Is a tree with a designated root node where every edge either points away or towards the root node. When edges point away fro the root, the graph is called an arborescence (*out-tree*) and anti-arborescence (*in-tree*) otherwise.
+
+   ![Rooted Trees](../assets/rooted-tree.png)
+
+- **Directed Acyclic Graphs (DAGs)**: Directed graphs with no cycles. These graphs play an important role in representing structures with dependencies. (Example: Schedulers, Course Prerequisites, etc...)
+   - Side Note: All *out-trees* are *DAGs* BUT not all *DAGs* are *out-trees*
+   - Related Algorithsm:
+      - Finding shortest Path
+      - Topological ordering of nodes
+
+   ![DAG](../assets/dags.png)
+
+- **Bipartite Graph**: One whose vertices can be split into two independent groups `U` and `V` such that every edge connects between `U` and `V`. 
+
+   ![Bipartite Graph](../assets/bipartite-graph.png)
