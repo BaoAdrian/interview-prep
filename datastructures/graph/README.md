@@ -83,7 +83,7 @@ optional arguments:
 
 - **Root Tree**: Is a tree with a designated root node where every edge either points away or towards the root node. When edges point away fro the root, the graph is called an arborescence (*out-tree*) and anti-arborescence (*in-tree*) otherwise.
 
-   *Rooted Tree*
+   *> Rooted Tree(s)*
    ![Rooted Trees](../assets/rooted-tree.png)
 
 - **Directed Acyclic Graphs (DAGs)**: Directed graphs with no cycles. These graphs play an important role in representing structures with dependencies. (Example: Schedulers, Course Prerequisites, etc...)
@@ -92,10 +92,18 @@ optional arguments:
       - Finding shortest Path
       - Topological ordering of nodes
 
-   *Directed Acyclic Graph*
+   *> Directed Acyclic Graph(s)*
    ![DAG](../assets/dags.png)
 
 - **Bipartite Graph**: One whose vertices can be split into two independent groups `U` and `V` such that every edge connects between `U` and `V`. 
+   - Common related questions:
+      - What is the maximum matching we can create on a bipartite graph?
+         - Example: Given the image below, if we assume red nodes are people and white notes are jobs, how many matches can we great with this given bipartite graph?
 
-   *Bipartite Graph*
+   *> Bipartite Graph(s)*
    ![Bipartite Graph](../assets/bipartite-graph.png)
+
+- **Complete Graph**: Graph where there is a unique edge between every pair of nodes. A complete graph with `n` vertices is denoted as the graph ![equation](http://www.sciweavers.org/tex2img.php?eq=K_%7Bn%7D&bc=White&fc=Black&im=png&fs=12&ff=arev&edit=0)
+
+   *> Complete Graph(s)*
+   ![Competed Graphs](../assets/complete-graphs.png)
