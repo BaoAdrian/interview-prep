@@ -8,8 +8,16 @@ This is the current structure of the repository and will be updated accordingly 
 ├── algorithms
 ├── coding-problems
 │   ├── CTCI
+│   ├── general-problems
+│   │   ├── graphs
+│   │   └── trees
 │   ├── hackerrank
 │   └── leetcode
+│       ├── arrays
+│       ├── recursion
+│       ├── stacks
+│       ├── strings
+│       └── trees
 └── datastructures
     ├── binary-heap
     ├── graph
@@ -62,4 +70,4 @@ Here is an [extensive list](https://en.wikipedia.org/wiki/List_of_algorithms) of
 
 
 # Coding Problems
-This directory contains solved problems (in Python) from LeetCode, HackerRank, & Cracking the Coding Interview.
+This directory contains solved problems (in Python) from LeetCode, HackerRank, & Cracking the Coding Interview. Additional problems not found in these resources will be included in the general-problems directory. 
