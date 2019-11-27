@@ -1,6 +1,8 @@
 # LeetCode
 All problems within this directory are sorted by data structure and are shown in the project tree below
 - [Arrays](#array-problems)
+- [Dynamic Programming](#dynamic-programming)
+- [General](#general)
 - [Recursion](#recursion-problems)
 - [Stacks](#stack-problems)
 - [Strings](#string-problems)
@@ -11,60 +13,62 @@ All problems within this directory are sorted by data structure and are shown in
 ```
 .
 ├── arrays
+│   ├── buy_sell_stock.py
+│   ├── flipping_image.py
 │   ├── max_subarrays.py
+│   ├── missing_number.py
+│   ├── move_zeros.py
+│   ├── remove_elements.py
 │   ├── single_number.py
-│   └── sort_by_parity.py
+│   ├── sort_by_parity.py
+│   ├── sort_colors.py
+│   └── word_search_i.py
+├── dynamic-programming
+│   └── min_path_sum.java
+├── general
+│   ├── linked_list_intersection.py
+│   └── power_of_two.py
 ├── recursion
-│   └── nth_tribonacci.py
+│   ├── climb_stairs.java
+│   ├── climb_stairs.py
+│   ├── nth_tribonacci.py
+│   └── powerset.py
 ├── stacks
+│   ├── backspace_strcmp.py
+│   ├── daily_temps.py
 │   ├── min_add_valid_paren.py
+│   ├── score_parentheses.py
 │   └── valid_paren.py
 ├── strings
 │   ├── add_binary.py
 │   ├── alphanumeric_palindrome.py
+│   ├── custom_sort_string.py
+│   ├── find_pattern.py
+│   ├── is_anagram.py
 │   ├── jewels_in_stones.py
+│   ├── longest_prefix.py
+│   ├── most_common_word.py
+│   ├── partition_labels.py
 │   ├── reverse_string.py
 │   ├── reverse_vowels.py
 │   ├── robot_to_origin.py
 │   └── unique_morse_codes.py
 └── trees
+    ├── all_possible_full_trees.py
     ├── balanced_tree.py
+    ├── binary_tree_paths.py
+    ├── construct_from_trav.py
+    ├── insert_bst.py
+    ├── invert_tree.py
+    ├── longest_unival_path.py
     ├── max_depth.py
+    ├── min_distance_bst.py
     ├── nary_traversals.py
-    ├── path_sum.py
+    ├── path_sum_i.py
+    ├── path_sum_iii.py
     ├── range_sum_bst.py
     ├── same_tree.py
     ├── symmetric_tree.py
+    ├── unique_bst_trees.py
     └── unival_tree.py
 ```
-
-# Array Problems
-- [Max Subarrays](./arrays/max_subarrays.py)
-- [Single Number](./arrays/single_number.py)
-- [Sort by Parity](./arrays/sort_by_parity.py)
-
-# Recursion Problems
-- [N-th Tribonacci Number](#./recursion/nth_tribonacci.py)
-
-# Stack Problems
-- [Minimum Add Valid Parentheses](./stacks/min_add_valid_paren.py)
-- [Valid Parentheses](./stacks/valid_paren.py)
-
-# String Problems
-- [Add Binary](./strings/add_binary.py)
-- [Alphanumeric Palindromes](./strings/alphanumeric_palindrome.py)
-- [Jewels and Stones](./strings/jewels_in_stones.py)
-- [Reverse String](./strings/reverse_string.py)
-- [Reverse Vowels](./strings/reverse_vowels.py)
-- [Robot to origin](./strings/robot_to_origin.py)
-- [Unique Morse Code](./strings/unique_morse_code.py)
-
-# Tree Problems
-- [Balanced Tree](./trees/balanced_tree.py)
-- [Max Depth](./trees/max_depth.py)
-- [N-ary Traversals (pre/post)](./trees/nary_traversals.py)
-- [Path Sum](./trees/path_sum.py)
-- [Range Sum BST](./trees/range_sum_bst.py)
-- [Same Tree](./trees/same_tree.py)
-- [Symmetric Tree](./trees/symmetric_tree.py)
-- [Univalue Tree](./trees/unival_tree.py)
