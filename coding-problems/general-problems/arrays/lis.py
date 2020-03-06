@@ -19,5 +19,5 @@ def LIS(A, n):
     return currMax
 
 if __name__ == "__main__":
-    A = [10,5,0,7,1,8,9,6,2,3,4]
+    A = [8,1,5,6,2,4,7,3]
     print(LIS(A, len(A)))
